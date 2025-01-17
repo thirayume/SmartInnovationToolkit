@@ -1,0 +1,10 @@
+{
+  "dashboard": {
+    "mockData": {
+      "title": "Mock Data Mode",
+      "toggle": "Toggle Mock Data",
+      "reset": "Reset Mock Data",
+      "description": "Toggle between mock data and real API. Reset to clear all mock data."
+    }
+  }
+}

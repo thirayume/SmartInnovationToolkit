@@ -1,0 +1,456 @@
+{
+  "common": {
+    "app": {
+      "name": "Smart Innovation Toolkit",
+      "description": "ยกระดับการศึกษาด้วยเทคโนโลยี"
+    },
+    "search": {
+      "title": "ค้นหา",
+      "placeholder": "ค้นหา..."
+    },
+    "actions": {
+      "save": "บันทึก",
+      "cancel": "ยกเลิก",
+      "delete": "ลบ",
+      "edit": "แก้ไข",
+      "view": "ดู",
+      "create": "สร้าง",
+      "update": "อัปเดต",
+      "search": "ค้นหา",
+      "confirm": "ยืนยัน",
+      "back": "ย้อนกลับ",
+      "next": "ถัดไป",
+      "submit": "ส่ง",
+      "loading": "กำลังโหลด...",
+      "saving": "กำลังบันทึก...",
+      "verify": "ยืนยัน",
+      "unverify": "ยกเลิกการยืนยัน",
+      "deleteClass": "ลบชั้นเรียน",
+      "viewReport": "ดูรายงาน"
+    },
+    "status": {
+      "success": "สำเร็จ",
+      "error": "ผิดพลาด",
+      "warning": "คำเตือน",
+      "info": "ข้อมูล"
+    },
+    "messages": {
+      "success": "ดำเนินการสำเร็จ",
+      "error": "เกิดข้อผิดพลาด",
+      "fetchError": "ไม่สามารถดึงข้อมูลได้",
+      "updateSuccess": "อัปเดตสำเร็จ",
+      "updateError": "ไม่สามารถอัปเดตได้",
+      "deleteSuccess": "ลบสำเร็จ",
+      "deleteError": "ไม่สามารถลบได้",
+      "required": "จำเป็นต้องกรอก"
+    },
+    "states": {
+      "loading": "กำลังโหลด...",
+      "error": "เกิดข้อผิดพลาด",
+      "empty": "ไม่มีข้อมูล",
+      "success": "สำเร็จ"
+    },
+    "form": {
+      "fields": {
+        "email": "อีเมล",
+        "password": "รหัสผ่าน",
+        "confirmPassword": "ยืนยันรหัสผ่าน",
+        "firstName": "ชื่อ",
+        "lastName": "นามสกุล",
+        "phone": "เบอร์โทรศัพท์",
+        "title": "คำนำหน้า",
+        "institution": "สถาบัน",
+        "province": "จังหวัด",
+        "studentId": "รหัสนักเรียน"
+      },
+      "placeholders": {
+        "email": "กรอกอีเมลของคุณ",
+        "password": "กรอกรหัสผ่าน",
+        "confirmPassword": "กรอกรหัสผ่านอีกครั้ง",
+        "firstName": "กรอกชื่อ",
+        "lastName": "กรอกนามสกุล",
+        "phone": "กรอกเบอร์โทรศัพท์",
+        "title": "เลือกคำนำหน้า",
+        "institution": "กรอกชื่อสถาบัน",
+        "province": "เลือกจังหวัด",
+        "search": "ค้นหา...",
+        "studentId": "กรอกรหัสนักเรียน"
+      },
+      "validation": {
+        "required": "กรุณากรอกข้อมูล",
+        "invalidEmail": "รูปแบบอีเมลไม่ถูกต้อง",
+        "invalidPhone": "รูปแบบเบอร์โทรศัพท์ไม่ถูกต้อง",
+        "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
+        "password": {
+          "minLength": "อย่างน้อย 8 ตัวอักษร",
+          "uppercase": "ต้องมีตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว",
+          "lowercase": "ต้องมีตัวพิมพ์เล็กอย่างน้อย 1 ตัว",
+          "number": "ต้องมีตัวเลขอย่างน้อย 1 ตัว",
+          "special": "ต้องมีอักขระพิเศษอย่างน้อย 1 ตัว"
+        }
+      },
+      "labels": {
+        "preScore": "คะแนนก่อนเรียน",
+        "postScore": "คะแนนหลังเรียน",
+        "select": "เลือก..."
+      }
+    },
+    "titles": {
+      "mr": "นาย",
+      "mrs": "นาง",
+      "ms": "นางสาว",
+      "dr": "ดร.",
+      "prof": "ศ."
+    },
+    "roles": {
+      "admin": "ผู้ดูแลระบบ",
+      "teacher": "ครู/อาจารย์",
+      "student": "นักเรียน/นักศึกษา",
+      "staff": "เจ้าหน้าที่"
+    },
+    "delete": "ลบ"
+  },
+  "auth": {
+    "login": {
+      "title": "เข้าสู่ระบบ",
+      "subtitle": "ยินดีต้อนรับ! กรุณาเข้าสู่ระบบ",
+      "rememberMe": "จดจำฉัน",
+      "forgotPassword": "ลืมรหัสผ่าน?",
+      "noAccount": "ยังไม่มีบัญชี?",
+      "register": "ลงทะเบียนเลย"
+    },
+    "actions": {
+      "login": "เข้าสู่ระบบ",
+      "register": "ลงทะเบียน"
+    },
+    "logout": {
+      "title": "ออกจากระบบ"
+    },
+    "register": {
+      "title": "สร้างบัญชีใหม่",
+      "action": "ลงทะเบียนเลย",
+      "subtitle": "สร้างบัญชีของคุณ",
+      "hasAccount": "มีบัญชีอยู่แล้ว?",
+      "login": "เข้าสู่ระบบที่นี่",
+      "defaultRole": "บทบาทเริ่มต้น: ครู"
+    },
+    "forgotPassword": {
+      "title": "ลืมรหัสผ่าน",
+      "subtitle": "กรอกอีเมลเพื่อรับลิงก์รีเซ็ตรหัสผ่าน",
+      "backToLogin": "กลับไปหน้าเข้าสู่ระบบ",
+      "checkEmail": "กรุณาตรวจสอบอีเมลของคุณ",
+      "emailSent": "เราได้ส่งลิงก์รีเซ็ตรหัสผ่านไปที่"
+    }
+  },
+  "layout": {
+    "menu": {
+      "dashboard": "แดชบอร์ด",
+      "classroom": "ชั้นเรียน",
+      "summary": "สรุป",
+      "contact": "ติดต่อ",
+      "profile": "โปรไฟล์",
+      "user": "ผู้ใช้ระบบ",
+      "settings": "ตั้งค่า",
+      "intro": "แนะนำ"
+    },
+    "footer": {
+      "contacts": "ติดต่อเรา",
+      "followUs": "ติดตามเรา",
+      "copyright": " 2025 Social Innovation Toolkit สงวนลิขสิทธิ์",
+      "contact": {
+        "subtitle": "ติดต่อสอบถาม",
+        "description": "เรายินดีให้ความช่วยเหลือและตอบคำถามทุกข้อสงสัยของคุณ เราหวังว่าจะได้ยินจากคุณ",
+        "phone": "+66 2 XXX XXXX",
+        "email": "contact@sit.com"
+      },
+      "social": {
+        "links": {
+          "facebook": "https://www.facebook.com/smartinnovationtoolkit",
+          "twitter": "https://twitter.com/smartinnovationtoolkit",
+          "instagram": "https://www.instagram.com/smartinnovationtoolkit/",
+          "youtube": "https://www.youtube.com/@smartinnovationtoolkit",
+          "linkedin": "https://www.linkedin.com/company/smartinnovationtoolkit/"
+        }
+      }
+    },
+    "theme": {
+      "dark": "โหมดกลางคืน",
+      "light": "โหมดกลางวัน"
+    },
+    "language": {
+      "title": "ภาษา",
+      "th": "ไทย",
+      "en": "อังกฤษ"
+    }
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "welcome": "ยินดีต้อนรับ",
+    "stats": {
+      "totalClasses": "จำนวนชั้นเรียนทั้งหมด",
+      "totalStudents": "จำนวนนักเรียนทั้งหมด",
+      "activeAssessments": "การประเมินที่กำลังดำเนินการ"
+    },
+    "mockData": {
+      "title": "Mock Data Mode",
+      "toggle": "Toggle Mock Data",
+      "reset": "Reset Mock Data",
+      "description": "Toggle between mock data and real API. Reset to clear all mock data."
+    }
+  },
+  "classroom": {
+    "title": "ชั้นเรียน",
+    "create": "สร้างชั้นเรียน",
+    "createDesc": "สร้างชั้นเรียนใหม่สำหรับนักเรียนของคุณ",
+    "actions": {
+      "students": {
+        "short": "นักเรียน",
+        "tooltip": "จัดการนักเรียนในชั้นเรียน"
+      },
+      "evaluate": {
+        "short": "ประเมิน",
+        "tooltip": "ประเมินผลนักเรียน"
+      },
+      "report": {
+        "short": "รายงาน",
+        "tooltip": "ดูรายงาน"
+      },
+      "uploadCSV": "อัปโหลดไฟล์ CSV",
+      "addManually": "เพิ่มด้วยตนเอง",
+      "edit": "แก้ไขชั้นเรียน",
+      "delete": "ลบชั้นเรียน"
+    },
+    "dialog": {
+      "addStudent": {
+        "title": "เพิ่มนักเรียนเข้าชั้นเรียน",
+        "description": "กรอกข้อมูลนักเรียนเพื่อเพิ่มเข้าชั้นเรียนนี้"
+      },
+      "import": {
+        "title": "นำเข้าข้อมูลนักเรียน",
+        "description": "อัปโหลดไฟล์ CSV ที่มีข้อมูลนักเรียนหรือเพิ่มนักเรียนด้วยตนเอง"
+      },
+      "delete": {
+        "title": "ลบชั้นเรียน",
+        "description": "คุณแน่ใจหรือไม่ที่จะลบชั้นเรียนนี้?"
+      }
+    },
+    "form": {
+      "title": "ชื่อชั้นเรียน",
+      "titlePlaceholder": "กรอกชื่อชั้นเรียน",
+      "subtitle": "คำอธิบายชั้นเรียน",
+      "subtitlePlaceholder": "กรอกคำอธิบายชั้นเรียน",
+      "createSuccess": "สร้างชั้นเรียนสำเร็จ",
+      "updateSuccess": "อัปเดตชั้นเรียนสำเร็จ"
+    },
+    "delete": {
+      "title": "ลบชั้นเรียน",
+      "description": "คุณแน่ใจหรือไม่ที่จะลบชั้นเรียนนี้? การดำเนินการนี้จะปิดการใช้งานข้อมูลนักเรียนและคะแนนทั้งหมดที่เกี่ยวข้องกับชั้นเรียนนี้ คุณสามารถกู้คืนชั้นเรียนได้ในภายหลังหากต้องการ",
+      "confirmButton": "ใช่ ลบชั้นเรียน",
+      "cancelButton": "ไม่ เก็บชั้นเรียนไว้"
+    }
+  },
+  "student": {
+    "title": "นักเรียน",
+    "add": "เพิ่มนักเรียน",
+    "import": "นำเข้าข้อมูลนักเรียน",
+    "form": {
+      "title": "ข้อมูลนักเรียน",
+      "studentId": "รหัสนักเรียน",
+      "firstName": "ชื่อ",
+      "lastName": "นามสกุล",
+      "class": "ชั้นเรียน"
+    },
+    "actions": {
+      "add": "เพิ่มนักเรียน",
+      "edit": "แก้ไขข้อมูลนักเรียน",
+      "delete": "ลบนักเรียน"
+    },
+    "dialog": {
+      "add": {
+        "title": "เพิ่มนักเรียนใหม่",
+        "description": "กรอกข้อมูลนักเรียนเพื่อเพิ่มเข้าชั้นเรียน"
+      },
+      "edit": {
+        "title": "แก้ไขข้อมูลนักเรียน",
+        "description": "แก้ไขข้อมูลนักเรียนในแบบฟอร์มด้านล่าง"
+      },
+      "delete": {
+        "title": "ลบนักเรียน",
+        "description": "คุณแน่ใจหรือไม่ที่จะลบนักเรียนคนนี้?"
+      }
+    }
+  },
+  "assessment": {
+    "title": "การประเมิน",
+    "types": {
+      "pre": "การประเมินก่อนเรียน",
+      "post": "การประเมินหลังเรียน"
+    }
+  },
+  "reports": {
+    "title": "รายงาน",
+    "types": {
+      "individual": "รายงานรายบุคคล",
+      "comparison": "รายงานเปรียบเทียบ",
+      "summary": "รายงานสรุป"
+    },
+    "filters": {
+      "class": "เลือกชั้นเรียน",
+      "student": "เลือกนักเรียน",
+      "dateRange": "เลือกช่วงวันที่"
+    },
+    "export": {
+      "title": "ส่งออก",
+      "pdf": "ส่งออกเป็น PDF",
+      "excel": "ส่งออกเป็น Excel"
+    }
+  },
+  "profile": {
+    "title": "โปรไฟล์",
+    "subtitle": "จัดการข้อมูลส่วนตัวและการตั้งค่าบัญชีของคุณ",
+    "view": "ดูโปรไฟล์",
+    "edit": "แก้ไขโปรไฟล์",
+    "changePassword": {
+      "title": "เปลี่ยนรหัสผ่าน",
+      "current": "รหัสผ่านปัจจุบัน",
+      "new": "รหัสผ่านใหม่",
+      "confirm": "ยืนยันรหัสผ่านใหม่"
+    }
+  },
+  "users": {
+    "title": "จัดการผู้ใช้",
+    "description": "จัดการผู้ใช้ บทบาท และสิทธิ์การใช้งาน",
+    "table": {
+      "name": "ชื่อ",
+      "email": "อีเมล",
+      "phone": "เบอร์โทรศัพท์",
+      "status": "สถานะ",
+      "verifications": "การยืนยัน",
+      "role": "บทบาท",
+      "actions": "การดำเนินการ"
+    },
+    "status": {
+      "active": "ใช้งาน",
+      "inactive": "ไม่ใช้งาน"
+    },
+    "messages": {
+      "notAuthorized": "คุณไม่มีสิทธิ์ดำเนินการนี้",
+      "statusChangeTitle": "เปลี่ยนสถานะผู้ใช้",
+      "statusChangeDescription": "คุณแน่ใจหรือไม่ที่จะเปลี่ยนสถานะผู้ใช้นี้?",
+      "statusChangeSuccess": "อัปเดตสถานะผู้ใช้สำเร็จ",
+      "verifyEmail": "ยืนยันอีเมลผู้ใช้",
+      "verifyEmailTitle": "ยืนยันอีเมล",
+      "verifyEmailDescription": "คุณแน่ใจหรือไม่ที่จะยืนยันอีเมลของผู้ใช้นี้?",
+      "verifyEmailSuccess": "ยืนยันอีเมลสำเร็จ",
+      "unverifyEmailTitle": "ยกเลิกการยืนยันอีเมล",
+      "unverifyEmailDescription": "คุณแน่ใจหรือไม่ที่จะยกเลิกการยืนยันอีเมลของผู้ใช้นี้?",
+      "unverifyEmailSuccess": "ยกเลิกการยืนยันอีเมลสำเร็จ",
+      "unverifyEmail": "ยกเลิกการยืนยันอีเมล",
+      "deleteTitle": "ลบผู้ใช้",
+      "deleteDescription": "คุณแน่ใจหรือไม่ที่จะลบผู้ใช้ {count} คน?",
+      "deleteSuccess": "ลบผู้ใช้ {count} คนสำเร็จ",
+      "deleteSelected": "ลบผู้ใช้ที่เลือก",
+      "cannotDeleteAdmins": "ไม่สามารถลบผู้ดูแลระบบได้",
+      "restoreSuccess": "กู้คืนผู้ใช้สำเร็จ",
+      "add": "เพิ่มผู้ใช้",
+      "addTooltip": "เพิ่มผู้ใช้ใหม่",
+      "edit": "แก้ไขผู้ใช้",
+      "editUser": "แก้ไขข้อมูลผู้ใช้",
+      "editUserDescription": "แก้ไขรายละเอียดผู้ใช้",
+      "title": "คำนำหน้า",
+      "role": "บทบาท",
+      "showInactive": "แสดงผู้ใช้ที่ไม่ได้ใช้งาน",
+      "hideInactive": "ซ่อนผู้ใช้ที่ไม่ได้ใช้งาน",
+      "activate": "เปิดใช้งานผู้ใช้",
+      "deactivate": "ปิดใช้งานผู้ใช้",
+      "restore": "กู้คืนผู้ใช้",
+      "delete": "ลบผู้ใช้",
+      "forceChangePassword": "บังคับเปลี่ยนรหัสผ่าน",
+      "resendVerification": "ส่งอีเมลยืนยันอีกครั้ง",
+      "roleChangeSuccess": "อัปเดตบทบาทผู้ใช้สำเร็จ"
+    }
+  },
+  "userManagement": {
+    "title": "จัดการผู้ใช้",
+    "subtitle": "จัดการผู้ใช้ระบบและสิทธิ์การใช้งาน",
+    "actions": {
+      "addUser": "เพิ่มผู้ใช้",
+      "editUser": "แก้ไขผู้ใช้",
+      "resendVerification": "ส่งการยืนยันอีกครั้ง",
+      "forceChangePassword": "บังคับเปลี่ยนรหัสผ่าน",
+      "changeRole": "เปลี่ยนบทบาท"
+    },
+    "columns": {
+      "name": "ชื่อ",
+      "email": "อีเมล",
+      "phone": "เบอร์โทรศัพท์",
+      "status": "สถานะ",
+      "verifications": "การยืนยัน",
+      "emailVerifications": "ยืนยันอีเมล",
+      "adminVerifications": "ยืนยันโดยผู้ดูแล",
+      "actions": "การดำเนินการ"
+    },
+    "messages": {
+      "statusChange": "เปลี่ยนสถานะผู้ใช้",
+      "statusChangeDescription": "คุณแน่ใจหรือไม่ที่จะเปลี่ยนสถานะของผู้ใช้นี้?",
+      "verifyEmail": "ยืนยันอีเมล",
+      "verifyEmailDescription": "คุณแน่ใจหรือไม่ที่จะยืนยันอีเมลของผู้ใช้นี้?",
+      "verifyAdmin": "ยืนยันผู้ดูแลระบบ",
+      "verifyAdminDescription": "คุณแน่ใจหรือไม่ที่จะยืนยันผู้ใช้นี้เป็นผู้ดูแลระบบ?",
+      "resendVerificationSuccess": "ส่งอีเมลยืนยันแล้ว",
+      "forceChangePasswordSuccess": "ส่งอีเมลรีเซ็ตรหัสผ่านแล้ว",
+      "notAuthorized": "คุณไม่มีสิทธิ์ดำเนินการนี้",
+      "roleChangeSuccess": "อัปเดตบทบาทผู้ใช้แล้ว",
+      "defaultRole": "บทบาทเริ่มต้นคือครู"
+    }
+  },
+  "classStudents": {
+    "title": "นักเรียนในชั้นเรียน",
+    "add": "เพิ่มนักเรียน",
+    "addManual": "เพิ่มนักเรียนด้วยตนเอง",
+    "addManualDescription": "กรอกข้อมูลนักเรียนลงในแบบฟอร์มด้านล่าง",
+    "importCsv": "นำเข้าจากไฟล์ CSV",
+    "importCsvDescription": "อัปโหลดไฟล์ CSV ที่มีข้อมูลนักเรียน",
+    "csvInstructions": "ไฟล์ CSV ควรมีคอลัมน์ดังนี้: คำนำหน้า, ชื่อ, นามสกุล",
+    "delete": {
+      "title": "ลบนักเรียน",
+      "description": "คุณแน่ใจหรือไม่ที่จะลบนักเรียนคนนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+    },
+    "report": "รายงานนักเรียน"
+  },
+  "kpi": {
+    "CB": {
+      "title": "การทำงานร่วมกัน [CB]",
+      "description": "ความสามารถในการทำงานร่วมกับผู้อื่น"
+    },
+    "CM": {
+      "title": "การสื่อสาร [CM]",
+      "description": "ความสามารถในการสื่อสารความคิดอย่างชัดเจน"
+    },
+    "CT": {
+      "title": "ความคิดสร้างสรรค์ [CT]",
+      "description": "ความสามารถในการสร้างไอเดียใหม่ๆ"
+    },
+    "IQ": {
+      "title": "การสืบค้น [IQ]",
+      "description": "ความสามารถในการค้นคว้าและสำรวจ"
+    },
+    "PS": {
+      "title": "การแก้ปัญหา [PS]",
+      "description": "ความสามารถในการแก้ไขปัญหาที่ซับซ้อน"
+    },
+    "RS": {
+      "title": "ความยืดหยุ่น [RS]",
+      "description": "ความสามารถในการรับมือกับความท้าทาย"
+    }
+  },
+  "individualReport": {
+    "title": "รายงานรายบุคคล",
+    "chart": {
+      "title": "แผนภูมิการประเมินทักษะ"
+    },
+    "scores": {
+      "title": "คะแนนโดยละเอียด"
+    }
+  }
+}

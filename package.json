@@ -10,5 +10,10 @@
 	},
 	"devDependencies": {
 		"concurrently": "^8.0.1"
+	},
+	"dependencies": {
+		"@types/react-router-dom": "^5.3.3",
+		"i18next-http-backend": "^3.0.1",
+		"react-router-dom": "^7.0.2"
 	}
 }

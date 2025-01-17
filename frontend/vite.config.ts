@@ -1,10 +1,16 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+// frontend/vite.config.ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 import fs from 'fs';
-import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   server: {
     port: 3000,
     https: {
@@ -13,10 +19,18 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        target: 'https://localhost:8000',
-        secure: true,
-        changeOrigin: true
+        target: process.env.VITE_API_URL || 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false, // Since we're using self-signed cert in development
+      }
+    }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        serviceWorker: path.resolve(__dirname, 'public/serviceWorker.js')
       }
     }
   }
-});
+})
