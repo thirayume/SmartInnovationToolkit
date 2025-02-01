@@ -1,5 +1,5 @@
 // src/utils/permissions.ts
-import { User, UserRole } from '../types';
+import { User, UserRole } from '../types/models';
 
 export const ROLE_HIERARCHY: Record<UserRole, number> = {
   'super_admin': 5,

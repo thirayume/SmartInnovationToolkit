@@ -2,7 +2,7 @@
 import { classData } from '../mockData/classData';
 import { classStudentData } from '../mockData/classStudentData';
 import { userData } from '../mockData/userData';
-import { Class, ClassStudent, User } from '../types';
+import { Class, ClassStudent, User } from '../types/models';
 
 // In-memory storage initialized with mock data
 let classes: Class[] = [...classData];
@@ -20,14 +20,14 @@ export const ClassService = {
 
   // Get a single class by ID
   getClass: async (classId: number): Promise<Class | null> => {
-    const classItem = classes.find(c => c.classId === classId);
+    const classItem = classes.find(c => c.id === classId);
     return Promise.resolve(classItem || null);
   },
 
   // Create a new class
-  createClass: async (data: Omit<Class, 'classId' | 'createdAt' | 'updatedAt'>): Promise<Class> => {
+  createClass: async (data: Omit<Class, 'id' | 'createdAt' | 'updatedAt'>): Promise<Class> => {
     const newClass: Class = {
-      classId: Math.max(0, ...classes.map(c => c.classId)) + 1,
+      id: Math.max(0, ...classes.map(c => c.id)) + 1,
       ...data,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -38,7 +38,7 @@ export const ClassService = {
 
   // Update a class
   updateClass: async (classId: number, data: Partial<Class>): Promise<Class | null> => {
-    const index = classes.findIndex(c => c.classId === classId);
+    const index = classes.findIndex(c => c.id === classId);
     if (index === -1) return Promise.resolve(null);
 
     classes[index] = {
@@ -51,7 +51,7 @@ export const ClassService = {
 
   // Soft delete a class and its related data
   softDeleteClass: async (classId: number, userId: number): Promise<boolean> => {
-    const classIndex = classes.findIndex(c => c.classId === classId);
+    const classIndex = classes.findIndex(c => c.id === classId);
     if (classIndex === -1) return Promise.resolve(false);
 
     // Soft delete the class
@@ -75,7 +75,7 @@ export const ClassService = {
   // Delete a class
   deleteClass: async (classId: number): Promise<boolean> => {
     const initialLength = classes.length;
-    classes = classes.filter(c => c.classId !== classId);
+    classes = classes.filter(c => c.id !== classId);
     classStudents = classStudents.filter(s => s.classId !== classId);
     return Promise.resolve(classes.length < initialLength);
   }
@@ -89,17 +89,17 @@ export const ClassStudentService = {
 
   // Get a single student
   getStudent: async (classId: number, studentId: number): Promise<ClassStudent | null> => {
-    const student = classStudents.find(s => s.classId === classId && s.classStudentId === studentId);
+    const student = classStudents.find(s => s.classId === classId && s.id === studentId);
     return Promise.resolve(student || null);
   },
-
+  
   // Create a new student
   createStudent: async (
     classId: number, 
-    data: Omit<ClassStudent, 'classStudentId' | 'classId' | 'createdAt' | 'updatedAt'>
+    data: Omit<ClassStudent, 'id' | 'classId' | 'createdAt' | 'updatedAt'>
   ): Promise<ClassStudent> => {
     const newStudent: ClassStudent = {
-      classStudentId: Math.max(0, ...classStudents.map(s => s.classStudentId)) + 1,
+      id: Math.max(0, ...classStudents.map(s => s.id)) + 1,
       classId,
       ...data,
       createdAt: new Date(),
@@ -108,7 +108,7 @@ export const ClassStudentService = {
     classStudents.push(newStudent);
     return Promise.resolve(newStudent);
   },
-
+  
   // Update a student
   updateStudent: async (
     classId: number,
@@ -116,11 +116,11 @@ export const ClassStudentService = {
     data: Partial<ClassStudent>
   ): Promise<ClassStudent | null> => {
     const index = classStudents.findIndex(s => 
-      s.classId === classId && s.classStudentId === studentId
+      s.classId === classId && s.id === studentId
     );
     
     if (index === -1) return Promise.resolve(null);
-
+  
     classStudents[index] = {
       ...classStudents[index],
       ...data,
@@ -128,12 +128,12 @@ export const ClassStudentService = {
     };
     return Promise.resolve(classStudents[index]);
   },
-
+  
   // Delete a student
   deleteStudent: async (classId: number, studentId: number): Promise<boolean> => {
     const initialLength = classStudents.length;
     classStudents = classStudents.filter(s => 
-      !(s.classId === classId && s.classStudentId === studentId)
+      !(s.classId === classId && s.id === studentId)
     );
     return Promise.resolve(classStudents.length < initialLength);
   }
@@ -153,7 +153,7 @@ export const UserService = {
 
   // Restore a deleted user
   restoreUser: async (userId: number): Promise<boolean> => {
-    const userIndex = userData.findIndex(u => u.userId === userId);
+    const userIndex = userData.findIndex(u => u.id === userId);
     if (userIndex === -1) return Promise.resolve(false);
 
     userData[userIndex] = {

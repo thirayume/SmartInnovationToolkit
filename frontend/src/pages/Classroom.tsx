@@ -15,7 +15,7 @@ import {
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { ClassService, ClassStudentService } from '../services/mockService';
-import { Class } from '../types';
+import { Class } from '../types/models';
 
 interface ClassroomCardProps {
   isCreate?: boolean;

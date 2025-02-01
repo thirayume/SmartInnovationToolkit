@@ -1,5 +1,5 @@
 // src/mockData/userData.ts
-import { User } from '../types';
+import { User } from '../types/models';
 
 export const userData: User[] = [
   {
@@ -16,12 +16,11 @@ export const userData: User[] = [
     emailVerifiedAt: new Date('2024-01-01T00:00:00Z'),
     adminVerifiedAt: new Date('2024-01-01T00:00:00Z'),
     isActive: true,
-    isDeleted: false,
     createdAt: new Date('2024-01-01T00:00:00Z'),
     updatedAt: new Date('2024-01-01T00:00:00Z'),
-    createdByUserId: null, // System created
-    updatedByUserId: null,
-    roles: ['super_admin']
+    createdBy: null,
+    updatedBy: null,
+    roles: 'super_admin'
   },
   {
     id: 2,
@@ -37,12 +36,11 @@ export const userData: User[] = [
     emailVerifiedAt: new Date('2024-01-02T00:00:00Z'),
     adminVerifiedAt: new Date('2024-01-02T00:00:00Z'),
     isActive: true,
-    isDeleted: false,
     createdAt: new Date('2024-01-02T00:00:00Z'),
     updatedAt: new Date('2024-01-02T00:00:00Z'),
-    createdByUserId: 1,
-    updatedByUserId: 1,
-    roles: ['admin']
+    createdBy: 1,
+    updatedBy: 1,
+    roles: 'admin'
   },
   {
     id: 3,
@@ -58,12 +56,11 @@ export const userData: User[] = [
     emailVerifiedAt: null,
     adminVerifiedAt: null,
     isActive: false,
-    isDeleted: false,
     createdAt: new Date('2024-01-03T00:00:00Z'),
     updatedAt: new Date('2024-01-03T00:00:00Z'),
-    createdByUserId: 2,
-    updatedByUserId: 2,
-    roles: ['staff']
+    createdBy: 2,
+    updatedBy: 2,
+    roles: 'staff'
   },
   {
     id: 4,
@@ -79,12 +76,11 @@ export const userData: User[] = [
     emailVerifiedAt: null,
     adminVerifiedAt: null,
     isActive: false,
-    isDeleted: false,
     createdAt: new Date('2024-01-04T00:00:00Z'),
     updatedAt: new Date('2024-01-04T00:00:00Z'),
-    createdByUserId: 2,
-    updatedByUserId: 2,
-    roles: ['teacher']
+    createdBy: 2,
+    updatedBy: 2,
+    roles: 'teacher'
   },
   {
     id: 5,
@@ -100,11 +96,10 @@ export const userData: User[] = [
     emailVerifiedAt: null,
     adminVerifiedAt: null,
     isActive: false,
-    isDeleted: false,
     createdAt: new Date('2024-01-05T00:00:00Z'),
     updatedAt: new Date('2024-01-05T00:00:00Z'),
-    createdByUserId: 2,
-    updatedByUserId: 2,
-    roles: ['teacher']
+    createdBy: 2,
+    updatedBy: 2,
+    roles: 'teacher'
   }
 ];

@@ -1,4 +1,4 @@
-import { KPI } from './types';
+import { KPI } from '../types/models';
 
 export const kpiData: Record<string, KPI> = {
   CB: {

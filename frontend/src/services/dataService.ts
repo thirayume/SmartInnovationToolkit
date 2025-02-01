@@ -1,7 +1,7 @@
 // src/services/dataService.ts
 import api from './api';
 import { ProfileService as MockProfileService } from './mockService';
-import { ApiResponse, ProfileData, Class, ClassStudent, User } from '../types';
+import { ApiResponse, Class, ClassStudent, User } from '../types/models';
 import { classData } from '../mockData/classData';
 import { classStudentData } from '../mockData/classStudentData';
 import { userData } from '../mockData/userData';
@@ -109,38 +109,6 @@ class DataService {
     return localStorage.getItem('useMockData') === 'true';
   }
 
-  profile = {
-    get: async (): Promise<ApiResponse> => {
-      try {
-        if (this.getUseMockData()) {
-          return MockProfileService.getProfile();
-        }
-        return await api.profile.get();
-      } catch (error) {
-        console.error('Profile get error:', error);
-        return {
-          success: false,
-          error: error instanceof Error ? error.message : 'Failed to get profile'
-        };
-      }
-    },
-
-    update: async (data: ProfileData): Promise<ApiResponse> => {
-      try {
-        if (this.getUseMockData()) {
-          return await MockProfileService.updateProfile(data);
-        }
-        return await api.profile.update(data);
-      } catch (error) {
-        console.error('Profile update error:', error);
-        return {
-          success: false,
-          error: error instanceof Error ? error.message : 'Failed to update profile'
-        };
-      }
-    }
-  };
-
   class = new BaseService<Class>(classData, 'Class');
   classStudent = {
     ...new BaseService<ClassStudent>(classStudentData, 'ClassStudent'),
@@ -156,7 +124,7 @@ class DataService {
       return this.getUseMockData()
         ? {
             success: true,
-            data: classStudentData.filter(cs => cs.studentUserId === studentId && cs.isActive)
+            data: classStudentData.filter(cs => cs.student?.id === studentId && cs.isActive)
           }
         : api.classStudent.getByStudentId(studentId);
     }

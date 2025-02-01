@@ -36,7 +36,7 @@ import {
   RotateCcw
 } from "lucide-react";
 import { toast } from "react-hot-toast";
-import { User, UserRole } from "../types";
+import { User, UserRole } from "../types/models";
 import { Spinner } from "../components/ui/spinner";
 import {
   TooltipRoot,

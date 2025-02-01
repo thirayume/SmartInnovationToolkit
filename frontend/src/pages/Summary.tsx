@@ -15,7 +15,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { ClassService, ClassStudentService } from '../services/mockService';
-import { Class, ClassStudent } from '../types';
+import { Class, ClassStudent } from '../types/models';
 
 const Summary: React.FC = () => {
   const { classId } = useParams<{ classId: string }>();

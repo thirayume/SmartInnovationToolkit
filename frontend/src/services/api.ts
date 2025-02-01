@@ -2,7 +2,7 @@
 import { toast } from 'react-hot-toast';
 import apiConfig from '../config/apiConfig';
 import mockDataService from './mockDataService';
-import { ClassStudent } from '../types';
+import { ClassStudent } from '../types/models';
 
 // Type definitions
 export interface RegisterData {

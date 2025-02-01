@@ -1,6 +1,6 @@
 // src/services/mockDataService.ts
 import { userData as initialUserData } from '../mockData/userData';
-import { User } from '../types';
+import { User } from '../types/models';
 
 const MOCK_DATA_KEY = 'mockUserData';
 

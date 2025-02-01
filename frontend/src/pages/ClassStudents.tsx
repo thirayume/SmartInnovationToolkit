@@ -33,8 +33,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ClassService, ClassStudentService } from '../services/mockService';
-import { Class, ClassStudent } from '../types';
+import { Class, ClassStudent } from '../types/models';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 interface StudentFormData {
   title: string;
@@ -45,6 +46,7 @@ interface StudentFormData {
 const ClassStudents: React.FC = () => {
   const { classId } = useParams<{ classId: string }>();
   const { t } = useTranslation();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [classData, setClassData] = useState<Class | null>(null);
   const [students, setStudents] = useState<ClassStudent[]>([]);
@@ -140,10 +142,10 @@ const ClassStudents: React.FC = () => {
       if (selectedStudent) {
         await ClassStudentService.updateStudent(
           Number(classId),
-          selectedStudent.classStudentId,
+          selectedStudent.id,
           {
             ...formData,
-            updatedByUserId: 1 // Replace with actual user ID from auth
+            updatedByUserId: user?.id ?? 1 // Use logged-in user ID with fallback
           }
         );
       } else {
@@ -152,12 +154,11 @@ const ClassStudents: React.FC = () => {
           {
             ...formData,
             id: 0,
-            studentUserId: 1, // TODO: Replace with actual student user ID
+            classId: Number(classId),
             enrolledAt: new Date(),
-            enrolledByUserId: 1, // TODO: Replace with actual user ID from auth
             isActive: true,
-            createdByUserId: 1, // TODO: Replace with actual user ID from auth
-            updatedByUserId: 1 // TODO: Replace with actual user ID from auth
+            createdByUserId: user?.id ?? 1, // Use logged-in user ID with fallback
+            updatedByUserId: user?.id ?? 1 // Use logged-in user ID with fallback
           }
         );
       }
@@ -175,7 +176,7 @@ const ClassStudents: React.FC = () => {
     try {
       await ClassStudentService.deleteStudent(
         Number(classId),
-        selectedStudent.classStudentId
+        selectedStudent.id
       );
       setIsDeleteDialogOpen(false);
       fetchStudents();
@@ -238,7 +239,7 @@ const ClassStudents: React.FC = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {students.map((student) => (
-            <Card key={student.classStudentId}>
+            <Card key={student.id}>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <div className="font-semibold">
                   {student.student?.title} {student.student?.firstName} {student.student?.lastName}
@@ -247,7 +248,7 @@ const ClassStudents: React.FC = () => {
                   <Button
                     variant="default"
                     size="icon"
-                    onClick={() => navigate(`/individual-report/${student.studentUserId}`)}
+                    onClick={() => navigate(`/individual-report/${student.id}`)}
                     title={t('common.actions.viewReport')}
                     className="bg-primary hover:bg-primary/90"
                   >
@@ -300,7 +301,7 @@ const ClassStudents: React.FC = () => {
                 <div>
                   <Label htmlFor="title">{t('common.form.fields.title')}</Label>
                   <Select
-                    value={formData.title}
+                    // value={formData.title}
                     onValueChange={(value) => setFormData({ ...formData, title: value })}
                   >
                     <SelectTrigger className="w-full">
@@ -319,7 +320,7 @@ const ClassStudents: React.FC = () => {
                   <Label htmlFor="firstName">{t('common.form.fields.firstName')}</Label>
                   <Input
                     id="firstName"
-                    value={formData.firstName}
+                    // value={formData.firstName}
                     placeholder={t('common.form.placeholders.firstName')}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                   />
@@ -329,7 +330,7 @@ const ClassStudents: React.FC = () => {
                   <Input
                     id="lastName"
                     placeholder={t('common.form.placeholders.lastName')}
-                    value={formData.lastName}
+                    // value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                   />
                 </div>
@@ -374,7 +375,7 @@ const ClassStudents: React.FC = () => {
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="title">{t('student.title')}</Label>
+                <Label htmlFor="title">{t('common.form.fields.title')}</Label>
                 <Select
                   value={formData.title}
                   onValueChange={(value) => setFormData({ ...formData, title: value })}
@@ -392,18 +393,20 @@ const ClassStudents: React.FC = () => {
                 </Select>
               </div>
               <div>
-                <Label htmlFor="firstName">{t('student.firstName')}</Label>
+                <Label htmlFor="firstName">{t('common.form.fields.firstName')}</Label>
                 <Input
                   id="firstName"
                   value={formData.firstName}
+                  placeholder={t('common.form.placeholders.firstName')}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 />
               </div>
               <div>
-                <Label htmlFor="lastName">{t('student.lastName')}</Label>
+                <Label htmlFor="lastName">{t('common.form.fields.lastName')}</Label>
                 <Input
                   id="lastName"
                   value={formData.lastName}
+                  placeholder={t('common.form.placeholders.lastName')}
                   onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 />
               </div>

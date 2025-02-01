@@ -1,11 +1,12 @@
-import { Student } from './types';
+import { Student } from '../types/models';
 
 export const studentData: Student[] = [
   {
-    studentId: 1,
+    id: 1,
+    classId: 1,
     title: 'นาย',
-    name: 'John',
-    surname: 'Smith',
+    firstName: 'John',
+    lastName: 'Smith',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,
@@ -13,10 +14,11 @@ export const studentData: Student[] = [
     updatedBy: 1
   },
   {
-    studentId: 2,
+    id: 2,
+    classId: 1,
     title: 'นางสาว',
-    name: 'Sarah',
-    surname: 'Johnson',
+    firstName: 'Sarah',
+    lastName: 'Johnson',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,
@@ -24,10 +26,11 @@ export const studentData: Student[] = [
     updatedBy: 1
   },
   {
-    studentId: 3,
+    id: 3,
+    classId: 2,
     title: 'นาย',
-    name: 'David',
-    surname: 'Williams',
+    firstName: 'David',
+    lastName: 'Williams',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,
@@ -35,10 +38,11 @@ export const studentData: Student[] = [
     updatedBy: 1
   },
   {
-    studentId: 4,
+    id: 4,
+    classId: 2,
     title: 'นางสาว',
-    name: 'Emma',
-    surname: 'Brown',
+    firstName: 'Emma',
+    lastName: 'Brown',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,
@@ -46,10 +50,11 @@ export const studentData: Student[] = [
     updatedBy: 1
   },
   {
-    studentId: 5,
+    id: 5,
+    classId: 3,
     title: 'นาย',
-    name: 'Michael',
-    surname: 'Davis',
+    firstName: 'Michael',
+    lastName: 'Davis',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,
@@ -57,10 +62,11 @@ export const studentData: Student[] = [
     updatedBy: 1
   },
   {
-    studentId: 6,
+    id: 6,
+    classId: 3,
     title: 'นางสาว',
-    name: 'Lisa',
-    surname: 'Wilson',
+    firstName: 'Lisa',
+    lastName: 'Wilson',
     isActive: true,
     createdAt: new Date('2024-01-10T08:00:00Z'),
     createdBy: 1,

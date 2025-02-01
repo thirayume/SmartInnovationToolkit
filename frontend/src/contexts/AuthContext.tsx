@@ -1,7 +1,7 @@
 // src/contexts/AuthContext.tsx
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User } from '../types';
+import { User } from '../types/models';
 import { UserService } from '../services/mockService';
 import api from '../services/api';
 
